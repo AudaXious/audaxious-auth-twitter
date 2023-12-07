@@ -39,11 +39,21 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // set up cors to allow us to accept requests from our client
+// app.use(
+//   cors({
+//     origin: "http://localhost:5173", // allow to server to accept request from different origin
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     credentials: true, // allow session cookie from browser to pass through
+//   })
+// );
+
+const cors = require("cors");
+
 app.use(
   cors({
-    origin: "http://localhost:5173", // allow to server to accept request from different origin
+    origin: "*", // Allow requests from any origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true, // allow session cookie from browser to pass through
+    credentials: true, // Allow session cookie from browser to pass through
   })
 );
 
