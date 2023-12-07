@@ -12,9 +12,14 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser"); // parse cookie header
 
 const port = process.env.PORT || 4000;
+const options = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  socketTimeoutMS: 30000,
+};
 
 mongoose
-  .connect(keys.MONGODB_URI)
+  .connect(keys.MONGODB_URI, options)
   .then(() => {
     console.log("connected to mongo db");
   })
