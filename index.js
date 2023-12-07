@@ -47,13 +47,11 @@ app.use(passport.session());
 //   })
 // );
 
-const cors = require("cors");
-
 app.use(
   cors({
-    origin: "*", // Allow requests from any origin
+    origin: "*", // allow to server to accept request from different origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true, // Allow session cookie from browser to pass through
+    credentials: true, // allow session cookie from browser to pass through
   })
 );
 
