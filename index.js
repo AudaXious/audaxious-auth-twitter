@@ -1,7 +1,7 @@
 const cookieSession = require("cookie-session");
 const express = require("express");
 const app = express();
-const port = 4000;
+
 const passport = require("passport");
 const passportSetup = require("./config/passport-setup");
 const session = require("express-session");
@@ -10,6 +10,8 @@ const mongoose = require("mongoose");
 const keys = require("./config/keys");
 const cors = require("cors");
 const cookieParser = require("cookie-parser"); // parse cookie header
+
+const port = process.env.PORT || 4000;
 
 mongoose
   .connect(keys.MONGODB_URI)
